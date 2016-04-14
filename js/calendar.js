@@ -209,6 +209,11 @@ function generateCalendar(year, month) {
 		}
 
 		div_solar.innerHTML = solarD; //公历日
+		
+		//判断周六、日
+		if(solar_date.getDay()==6||solar_date.getDay()==0){
+			addClass(div_solar,"weekend");
+		}
 
 		if (spec_date == firstT) {
 			addClass(DLi, "solarTerm");
