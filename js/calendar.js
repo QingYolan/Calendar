@@ -57,6 +57,7 @@ function init(SY, EY) {
 					CALS[j].setAttribute("value", target.getAttribute("value"));
 					generateCalendar(parseInt(CALS[0].getAttribute("value")), parseInt(CALS[2].getAttribute("value")));
 				} else {
+					CALS[j].setAttribute("date",target.getAttribute("date"));
 					toDay(target.getAttribute("date"));
 				}
 			});
