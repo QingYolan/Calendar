@@ -1,0 +1,93 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+	<title>Calendar</title>
+	<meta name="author" content="Zhou Xiaoqing">
+	<meta http-equiv="Content-Type" content="text/html,charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css"></head>
+	<!--[if IE 9]>
+	<style type="text/css">
+	.selectYear ul { width:120px; }
+	.selectHoliday ul { width:180px; }
+	.selectMonth ul { width:80px; }
+	</style>
+	<![endif]-->
+<body onclick="toggle(event,3)">
+	<div class="container">
+		<div class="control">
+
+			<div class="title">
+				<span>万年历</span>
+				<button type="button" class="btn-today">今天</button>
+			</div>
+
+			<div class="clearfix textC" id="selectDate">
+
+				<!--select-year start-->
+				<div class="selectYear floatL">
+					<button type="button" class="btn-year btn-prev floatL"></button>
+					<div class="cal-year floatL cal-change" onclick="toggle(event,0)"></div>
+					<button type="button" class="btn-year btn-next floatR"></button>
+					<ul class="list"></ul>
+				</div>
+				<!--select-year end-->
+
+				<!--select-holiday start-->
+				<div class="selectHoliday floatL">
+					<div class="cal-holiday cal-change" onclick="toggle(event,1)"></div>
+					<ul class="list"></ul>
+				</div>
+				<!--select-holiday end-->
+
+				<!--select-month start-->
+				<div class="selectMonth floatR">
+					<button type="button" class="btn-month btn-prev floatL"></button>
+					<div class="cal-month floatL cal-change" onclick="toggle(event,2)"></div>
+					<button type="button" class="btn-month btn-next floatR"></button>
+					<ul class="list"></ul>
+				</div>
+				<!--select-month end-->
+			</div>
+
+		</div>
+		<div class="content">
+			<ul class="clearfix weeklist">
+				<li value="1">一</li>
+				<li value="2">二</li>
+				<li value="3">三</li>
+				<li value="4">四</li>
+				<li value="5">五</li>
+				<li value="6">六</li>
+				<li value="7">日</li>
+			</ul>
+			<ol class="clearfix speclist"></ol>
+		</div>
+		<div class="show clearfix">
+			<div class="floatL">
+				<span id="span_day"></span>
+				<span id="span_week"></span>
+			</div>
+			<div class="floatR">
+				<span id="span_lunar"></span>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/data.js"></script>
+<script src="js/calendar.js"></script>
+<script type="text/javascript">
+(function() {
+	init(1901, 2100);
+
+	//居中
+	var containerH = document.getElementsByClassName("container")[0].offsetHeight;
+	var bodyH = document.body.clientHeight;
+	var bodyW = document.body.clientWidth;
+	if (bodyW >= 768 && bodyH > containerH) {
+		var topH = (bodyH - containerH) / 2;
+		document.getElementsByClassName("container")[0].style.marginTop = topH + "px";
+	}
+})();
+</script>
+</html>
