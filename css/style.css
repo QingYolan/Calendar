@@ -232,6 +232,9 @@ ul.list li:hover {
 .work {
 	height: 20px;
 }
+.weekend {
+	color: #fe6274;
+}
 .solar {
 	font-size: 20px;
 }
