@@ -117,7 +117,12 @@ function init(SY, EY) {
 
 	//返回今天
 	document.getElementsByClassName("btn-today")[0].onclick = function() {
-		window.location.reload();
+		var d = new Date();
+		CALS[0].innerHTML=d.getFullYear()+"年";
+		CALS[1].innerHTML="2016年节假日安排";
+		CALS[2].innerHTML=(d.getMonth()+1)+"月";
+		generateCalendar(d.getFullYear(), d.getMonth() + 1);
+		toDay(d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate());
 	}
 }
 
