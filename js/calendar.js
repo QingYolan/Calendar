@@ -117,9 +117,7 @@ function init(SY, EY) {
 
 	//返回今天
 	document.getElementsByClassName("btn-today")[0].onclick = function() {
-		var d = new Date();
-		generateCalendar(d.getFullYear(), d.getMonth() + 1);
-		toDay(d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate());
+		window.location.reload();
 	}
 }
 
