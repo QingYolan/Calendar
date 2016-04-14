@@ -114,6 +114,10 @@ function init(SY, EY) {
 		var tg = e.target || e.srcElement;
 		var target = tg.nodeName == "DIV" ? tg.parentNode : tg;
 		var date = target.getAttribute("date");
+		if (new Date(CALS[1].getAttribute("date")).getMonth() != new Date(date).getMonth()) {
+			CALS[1].innerHTML = "2016年假日安排";
+			CALS[1].setAttribute("value", 0);
+		}
 		toDay(date);
 	}
 
