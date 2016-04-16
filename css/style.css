@@ -213,6 +213,9 @@ ul.list li {
 	color: #fff;
 	background-color: #fe6274;
 }
+.now .weekend {
+	color:#fff;
+}
 .now .lunar {
 	color: #fff;
 }
